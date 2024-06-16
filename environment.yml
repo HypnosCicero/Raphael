@@ -1,0 +1,15 @@
+name: raphael
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python
+  - pytorch
+  - cudatoolkit=11.8  
+  # - pip
+  # - pip:
+  #     - jupyterlab
+  #     - numpy
+  #     - pandas
+  #     - matplotlib
+  #     - scikit-learn
