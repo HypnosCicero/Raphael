@@ -1,2 +1,2 @@
 import torch
-print(torch.__version__)
+print(f"torch.version = {torch.__version__}")
