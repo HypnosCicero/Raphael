@@ -22,7 +22,7 @@ conda env create -f ./environment.yml [-p </your/path>]
 3. Use the following command to activate the "Raphael" environment.
 ```bash
 conda activate </your/env/path>
-```s
+```
 4. If you no longer want to continue developing "Raphael", and do not want to retain any "Raphael" related environment; please use the following commands:
 
 Deactivate command:
