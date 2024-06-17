@@ -1,6 +1,13 @@
 # What is Raphael
 Raphael is a general-purpose, scalable, continuously learning neural network or brain.
 
+## What is difference
+Neural networks represented by CNNs, RNNs, and Transformers rely on large amounts of data and computational resources and have strong representation learning capabilities, but they are often static, with fixed parameters after training. Although Transformers, led by GPT, have expanded their number of neurons (parameters) to approach the number of neurons in the human brain, resulting in unexpected emergent effects, it is likely that these models will continue to increase their parameters in the future.
+
+However, fundamentally, although these models have addressed a key issue: the importance of the number of neurons and their interactions, they have not considered the redundancy of parameters and the necessity of dynamically adjusting them. Dynamically increasing or decreasing parameters during model operation will be an important direction.
+
+This method (referring to the dynamic addition and reduction of neurons) can truly simulate the lifecycle of neurons and address a problem that mathematics alone cannot solve: the loss function becomes fixed after fitting, causing the model to lose its ability to learn. I have read numerous solutions aimed at preventing the training loss function from becoming fixed, all of which approach the problem from a mathematical perspective. They seek to use a function that is continuous, smooth, and differentiable everywhere to prevent the loss function from becoming fixed through mathematical operations. However, I believe we should consider this issue from the objective laws of biology: our brain continuously replaces neurons (metabolism). If we apply this mechanism to neural networks, rather than relying solely on mathematical approaches, could we solve the problem of the loss function becoming fixed?
+
 - [ ] Continue to write about Raphael’s 'principles'.
 
 # How to use
@@ -15,7 +22,7 @@ conda env create -f ./environment.yml [-p </your/path>]
 3. Use the following command to activate the "Raphael" environment.
 ```bash
 conda activate </your/env/path>
-```
+```s
 4. If you no longer want to continue developing "Raphael", and do not want to retain any "Raphael" related environment; please use the following commands:
 
 Deactivate command:
@@ -27,4 +34,3 @@ Remove entire environment command:
 ```bash
 conda remove -p </path/to/your/env> --all
 ```
-
