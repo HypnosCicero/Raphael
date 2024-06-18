@@ -2,51 +2,63 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
+import random
 
-class DynamicNN(nn.Module):
-    def __init__(self, input_size, hidden_size, output_size):
-        super(DynamicNN, self).__init__()
-        self.hidden_layers = nn.ModuleList([nn.Linear(input_size, hidden_size)])
-        self.output_layer = nn.Linear(hidden_size, output_size)
+class CustomNeuron:
+    def __init__(self, input_size):
+        self.weights = torch.randn(input_size, requires_grad=True)
+        self.bias = torch.randn(1, requires_grad=True)
+        self.lifetime = random.randint(50, 100)  # 随机设定一个生命周期
+        self.age = 0
+
+    def forward(self, x):
+        return x @ self.weights + self.bias
+
+    def step(self):
+        self.age += 1
+        if self.age > self.lifetime:
+            return False  # 返回False表示该神经元已经死亡
+        return True
+
+class CustomLayer(nn.Module):
+    def __init__(self, input_size, initial_neurons):
+        super(CustomLayer, self).__init__()
+        self.neurons = [CustomNeuron(input_size) for _ in range(initial_neurons)]
     
     def forward(self, x):
-        for layer in self.hidden_layers:
-            x = F.relu(layer(x))
+        outputs = [neuron.forward(x) for neuron in self.neurons if neuron.step()]
+        self.neurons = [neuron for neuron in self.neurons if neuron.age <= neuron.lifetime]  # 移除死亡神经元
+        return torch.stack(outputs, dim=-1).sum(dim=-1)  # 将输出堆叠并求和
+
+    def add_neuron(self, input_size):
+        self.neurons.append(CustomNeuron(input_size))
+
+    def prune_neuron(self):
+        if self.neurons:
+            self.neurons.pop(random.randint(0, len(self.neurons) - 1))
+
+class DynamicNN(nn.Module):
+    def __init__(self, input_size, initial_neurons, output_size):
+        super(DynamicNN, self).__init__()
+        self.custom_layer = CustomLayer(input_size, initial_neurons)
+        self.output_layer = nn.Linear(initial_neurons, output_size)
+    
+    def forward(self, x):
+        x = self.custom_layer(x)
         x = self.output_layer(x)
         return x
-    
-    def add_neuron(self, layer_index):
-        layer = self.hidden_layers[layer_index]
-        new_layer = nn.Linear(layer.in_features, layer.out_features + 1)
-        new_layer.weight.data[:,:-1] = layer.weight.data
-        new_layer.bias.data[:-1] = layer.bias.data
-        self.hidden_layers[layer_index] = new_layer
-    
-    def prune_neuron(self, layer_index, neuron_index):
-        layer = self.hidden_layers[layer_index]
-        new_layer = nn.Linear(layer.in_features, layer.out_features - 1)
-        new_layer.weight.data = torch.cat((layer.weight.data[:neuron_index], layer.weight.data[neuron_index+1:]), dim=0)
-        new_layer.bias.data = torch.cat((layer.bias.data[:neuron_index], layer.bias.data[neuron_index+1:]), dim=0)
-        self.hidden_layers[layer_index] = new_layer
 
+# 创建动态神经网络
+input_size = 784
+initial_neurons = 10
+output_size = 10
+dynamic_model = DynamicNN(input_size, initial_neurons, output_size)
 
-# parameter
-input_size = 784  # size of the data
-hidden_size = 128
-output_size = 10  # size of the result class
+# 损失函数和优化器
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(dynamic_model.parameters(), lr=0.001)
 
-
-# create dynamic Neural Networks
-dynamic_model = DynamicNN(input_size, hidden_size, output_size)
-
-# add the layer of the dynamic_model
-dynamic_model.add_neuron(0)
-
-# Reduce neurons 0 to 5
-dynamic_model.prune_neuron(0, 5)
-
-
-# train
+# 示例训练循环
 def train_dynamic(model, train_loader, criterion, optimizer, epochs=5):
     for epoch in range(epochs):
         for data, target in train_loader:
@@ -57,8 +69,10 @@ def train_dynamic(model, train_loader, criterion, optimizer, epochs=5):
             optimizer.step()
         
         # 动态调整神经元
-        if epoch % 2 == 0:  # 每两个epoch调整一次
-            model.add_neuron(0)
-        elif epoch % 3 == 0:
-            model.prune_neuron(0, 5)
+        if epoch % 2 == 0:  # 每两个epoch增加一个神经元
+            model.custom_layer.add_neuron(input_size)
+        elif epoch % 3 == 0:  # 每三个epoch剪掉一个神经元
+            model.custom_layer.prune_neuron()
 
+# 训练示例（假设train_loader已经定义）
+# train_dynamic(dynamic_model, train_loader, criterion, optimizer)
