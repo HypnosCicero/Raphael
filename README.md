@@ -9,7 +9,7 @@ However, fundamentally, although these models have addressed a key issue: the im
 This method (referring to the dynamic addition and reduction of neurons) can truly simulate the lifecycle of neurons and address a problem that mathematics alone cannot solve: the loss function becomes fixed after fitting, causing the model to lose its ability to learn. I have read numerous solutions aimed at preventing the training loss function from becoming fixed, all of which approach the problem from a mathematical perspective. They seek to use a function that is continuous, smooth, and differentiable everywhere to prevent the loss function from becoming fixed through mathematical operations. However, I believe we should consider this issue from the objective laws of biology: ~~our brain continuously replaces neurons (metabolism).~~ If we apply this mechanism to neural networks, rather than relying solely on mathematical approaches, could we solve the problem of the loss function becoming fixed?
 
 > Notify:  
-> The number of neurons in the brain tends to stabilize after adulthood, so the statement that our brains are replacing neurons all the time is a wrong description.  
+> The number of neurons in the brain tends to stabilize after adulthood, so the statement that 'our brains are replacing neurons all the time' is a wrong description.  
 > Thanks my friend 福酱(18963870758@163.com).
 
 ## Explanation
