@@ -10,7 +10,7 @@ This method (referring to the dynamic addition and reduction of neurons) can tru
 
 > Notify:  
 > The number of neurons in the brain tends to stabilize after adulthood, so the statement that our brains are replacing neurons all the time is a wrong description.  
-> Thanks my friend [福酱](18963870758@163.com).
+> Thanks my friend 福酱(18963870758@163.com).
 
 ## Explanation
 Here is an explanation of why using the interaction of mechanisms instead of purely mathematical methods. We know that individual physical or chemical principles are simple: for example, the entropy principle and the enthalpy principle. However, the combination of these two principles forms the principle of minimum free energy, which explains how neurons minimize energy to predict events. This combination can also give rise to various anthropological and sociological phenomena, such as human curiosity about the unknown (consistent with the principle of entropy increase in information theory), scientific induction of new knowledge into existing systems (reducing cognitive load), and laziness in states of abundance or extreme scarcity (a self-protection mechanism of biological systems).
