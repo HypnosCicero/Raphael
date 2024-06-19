@@ -8,6 +8,13 @@ However, fundamentally, although these models have addressed a key issue: the im
 
 This method (referring to the dynamic addition and reduction of neurons) can truly simulate the lifecycle of neurons and address a problem that mathematics alone cannot solve: the loss function becomes fixed after fitting, causing the model to lose its ability to learn. I have read numerous solutions aimed at preventing the training loss function from becoming fixed, all of which approach the problem from a mathematical perspective. They seek to use a function that is continuous, smooth, and differentiable everywhere to prevent the loss function from becoming fixed through mathematical operations. However, I believe we should consider this issue from the objective laws of biology: our brain continuously replaces neurons (metabolism). If we apply this mechanism to neural networks, rather than relying solely on mathematical approaches, could we solve the problem of the loss function becoming fixed?
 
+## Explanation
+Here is an explanation of why using the interaction of mechanisms instead of purely mathematical methods. We know that individual physical or chemical principles are simple: for example, the entropy principle and the enthalpy principle. However, the combination of these two principles forms the principle of minimum free energy, which explains how neurons minimize energy to predict events. This combination can also give rise to various anthropological and sociological phenomena, such as human curiosity about the unknown (consistent with the principle of entropy increase in information theory), scientific induction of new knowledge into existing systems (reducing cognitive load), and laziness in states of abundance or extreme scarcity (a self-protection mechanism of biological systems).
+
+From this perspective, we can see that the combination of physical and chemical principles can produce a series of real-world phenomena. Additionally, the term "emergence" refers to the regular state achieved by the interaction of various mechanisms in an ecosystem. In games like The Legend of Zelda: Breath of the Wild, Dwarf Fortress, similar interaction mechanisms present situations more in line with natural conditions. Emergent phenomena also align with the study of chaos theory.
+
+In summary, sometimes 1+1 is indeed not equal to 2. The interaction between them is greater than 2, although the effect is small and unquantifiable.
+
 ## Cell division(focal point)
 - [ ] Learn the biological theories related to cell division.
 
