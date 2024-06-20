@@ -3,14 +3,15 @@ import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 import random
+from torch import Tensor
 
 class CustomNeuron:
-    def __init__(self, input_size, index:int) -> None:
-        self.weights = torch.randn(input_size, requires_grad=True) # 树突 TODO need to dynamic
-        self.bias = torch.randn(1, requires_grad=True)
-        self.lifetime = random.randint(50, 100)  # 随机设定一个生命周期
-        self.index = index
-        self.age = 0
+    def __init__(self, input_size:int, index:int) -> None:
+        self.weights:Tensor= torch.randn(input_size, requires_grad=True) # 树突 TODO need to dynamic
+        self.bias:Tensor = torch.randn(1, requires_grad=True)
+        self.lifetime:int = random.randint(50, 100)  #TODO test the lifetime value
+        self.index:int = index
+        self.age:int = 0
 
     def destroy(self) -> int :
         return self.index
