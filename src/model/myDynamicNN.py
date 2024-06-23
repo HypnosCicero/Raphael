@@ -20,7 +20,7 @@ class CustomNeuron:
     def destroy(self) -> int :
         return self.index
     
-    def copy(self) -> 'CustomNeuron':
+    def mitosis(self) -> 'CustomNeuron':
         newNeuron:CustomNeuron = CustomNeuron.__init__()
         newNeuron.weights = self.weights
         newNeuron.bias = self.bias
