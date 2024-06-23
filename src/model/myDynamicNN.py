@@ -28,6 +28,7 @@ class CustomNeuron:
         self.energy -= 5
         self.age += 2
         newNeuron.age = self.age
+        newNeuron.energy = self.energy
         return newNeuron
 
     def forward(self, x):
