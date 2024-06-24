@@ -21,9 +21,19 @@ In summary, sometimes 1+1 is indeed not equal to 2. The interaction between them
 
 
 ### Summarize：
-To date, we need to simulate the dynamic effects seen in biology, incorporating these effects into artificial neural networks. (Although in adulthood neurons no longer increase significantly in number), it is important to note that the strongest learning capabilities occur during youth and adolescence.List of Challenges (Examples all taken from `src/model/dynamicNN.py`):
+To date, we need to simulate the dynamic effects seen in biology, incorporating these effects into artificial neural networks. (Although in adulthood neurons no longer increase significantly in number), it is important to note that the strongest learning capabilities occur during youth and adolescence.
 
+List of Challenges (Examples all taken from `src/model/dynamicNN.py`):
 
+- [ ] How to make "dendrites" (`weights` in `dynamicNN.py`) automatically increase regularly?
+    - [ ] 1. How to increase scientifically, because once the dendrites increase, it proves that the number of connected neurons has increased, how to perform this increase?
+    - [ ] 2. The increase in dendrites proves that the passed down value will also increase, then `x` will also increase. How to ensure that x can increase or decrease accordingly?
+    - [ ] 3. How to ensure that the passed values ​​`x` and `weights` are corresponding?
+- [ ] How to make "neurons" (`CustomNeuron()` in `dynamicNN.py`) increase regularly?
+    - [ ] 1. How to perform mitosis?
+    - [ ] 2. How to construct the energy consumption mechanism of mitosis using Pytorch?
+    - [ ] 3. How to connect the newly added neurons? This is the most difficult. If you add a new neuron to represent the next layer or the layer linked to it, you need to add the corresponding "dendrite" to obtain the data passed down by the neuron.
+    - [ ] 4. How to ensure that the above (`weights`) will not be affected when dynamic changes occur.
 ## Cell division(focal point)
 - [ ] Learn the biological theories related to cell division.
 
