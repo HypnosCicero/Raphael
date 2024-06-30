@@ -16,8 +16,8 @@ This method (referring to the dynamic addition and reduction of neurons) can tru
 
 ## Existing Theories
 
-[Spiking neural network(SNN)](<https://en.wikipedia.org/wiki/Spiking_neural_network>)
-[Papers with Code](<https://paperswithcode.com/task/architecture-search>)
+[Spiking neural network(SNN)](<https://en.wikipedia.org/wiki/Spiking_neural_network>)  
+[Papers with Code](<https://paperswithcode.com/task/architecture-search>)  
 [ar5iv](<https://ar5iv.org/pdf/2304.10749.pdf>)
 
 At present, it is necessary to carry out research on these theories, and first simulate their results based on the existing theories.
