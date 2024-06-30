@@ -14,13 +14,13 @@ This method (referring to the dynamic addition and reduction of neurons) can tru
 > The number of neurons in the brain tends to stabilize after adulthood, so the statement that 'our brain continuously replaces neurons (metabolism)' is a wrong description.  
 > Thanks my friend 福酱<18963870758@163.com>.
 
-### Explanation
+## Existing Theories
 
-Here is an explanation of why using the interaction of mechanisms instead of purely mathematical methods. We know that individual physical or chemical principles are simple: for example, the entropy principle and the enthalpy principle. However, the combination of these two principles forms the principle of minimum free energy, which explains how neurons minimize energy to predict events. This combination can also give rise to various anthropological and sociological phenomena, such as human curiosity about the unknown (consistent with the principle of entropy increase in information theory), scientific induction of new knowledge into existing systems (reducing cognitive load), and laziness in states of abundance or extreme scarcity (a self-protection mechanism of biological systems).
+[Spiking neural network(SNN)](<https://en.wikipedia.org/wiki/Spiking_neural_network>)
+[Papers with Code](<https://paperswithcode.com/task/architecture-search>)
+[ar5iv](<https://ar5iv.org/pdf/2304.10749.pdf>)
 
-From this perspective, we can see that the combination of physical and chemical principles can produce a series of real-world phenomena. Additionally, the term "emergence" refers to the regular state achieved by the interaction of various mechanisms in an ecosystem. In games like The Legend of Zelda: Breath of the Wild, Dwarf Fortress, similar interaction mechanisms present situations more in line with natural conditions. Emergent phenomena also align with the study of chaos theory.
-
-In summary, sometimes 1+1 is indeed not equal to 2. The interaction between them is greater than 2, although the effect is small and unquantifiable.
+At present, it is necessary to carry out research on these theories, and first simulate their results based on the existing theories.
 
 ### Summarize
 
